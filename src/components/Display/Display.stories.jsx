@@ -7,5 +7,5 @@ export default {
 }
 
 export const DisplayExample = () => {
-  return <Display text={'Helsdsdsdlo'} />
+  return <Display text={'Hello'} />
 }

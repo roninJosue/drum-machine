@@ -4,8 +4,11 @@ import styled from "styled-components";
 import "@fontsource/roboto"
 
 const DivStyled = styled.div`
-  background-color: #61dafb;
+  //background-color: red;
   font-family: 'Roboto',monospace;
+  //color: #fff;
+  padding: 1rem;
+  width: 100%;
 `
 
 const Display = ({text}) => {
