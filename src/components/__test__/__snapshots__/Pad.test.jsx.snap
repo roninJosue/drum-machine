@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pad component should render 1`] = `
+<DocumentFragment>
+  <button
+    class="sc-bdvvtL hnBZed drum-pad"
+  >
+    A
+  </button>
+</DocumentFragment>
+`;

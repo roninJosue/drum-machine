@@ -2,19 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from "styled-components";
 import "@fontsource/roboto"
+import {primaryColor} from "../../utils/colors";
 
-const DivStyled = styled.div`
+
+const DisplayStyled = styled.div`
   font-family: 'Roboto',monospace;
   padding: 1rem;
-  width: 100%;
+  border: 2px solid ${primaryColor};
+  border-bottom: 5px solid ${primaryColor};
+  border-left: 5px solid ${primaryColor};
 `
 
 const Display = ({text}) => {
   const newText = text.toUpperCase().split('').reverse().join('')
   return (
-    <DivStyled>
+    <DisplayStyled>
       {newText}
-    </DivStyled>
+    </DisplayStyled>
   );
 };
 
