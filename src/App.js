@@ -1,22 +1,23 @@
-import './App.css';
+import styled from "styled-components";
+import DrumMachine from "./components/DrumMachine/DrumMachine";
+import Heading from "./components/Heading";
+
+const Main = styled.main`
+  background: linear-gradient(#155592, #1c7ed6);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Main>
+      <Heading text='Drum Machine' />
+      <DrumMachine />
+    </Main>
   );
 }
 

@@ -6,4 +6,4 @@ export default {
   component: Pad
 }
 
-export const PadExample = () => (<Pad onClick={() => {}} text='q' />)
+export const PadExample = () => (<Pad onClick={() => {}} text='e' />)
