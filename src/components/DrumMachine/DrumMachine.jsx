@@ -13,10 +13,7 @@ const Section = styled.section`
   background-color: ${white};
   border-radius: 10px;
   ${breakpoints('width', '%', [
-    {450: 90}
-  ])}
-  ${breakpoints('height', 'vh', [
-    {450: 100}
+    {600: 90},
   ])}
 `
 
