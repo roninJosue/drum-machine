@@ -1,8 +1,8 @@
 import React from 'react';
 import GlobalFonts from '../../fonts/fonts'
 import styled from "styled-components";
-import PropTypes from 'prop-types';
-import {primaryColor, white} from "../../utils/colors";
+import { primaryColor, white } from "../../utils/colors";
+import { breakpoints } from "../utils/styledBreakpoint";
 
 const Section = styled.section`
   width: 600px;
@@ -12,13 +12,19 @@ const Section = styled.section`
   font-family: 'Roboto', sans-serif;
   background-color: ${white};
   border-radius: 10px;
+  ${breakpoints('width', '%', [
+    {450: 90}
+  ])}
+  ${breakpoints('height', 'vh', [
+    {450: 100}
+  ])}
 `
 
-const DrumMachine = props => {
+const DrumMachine = () => {
   return (
     <Section>
       <GlobalFonts />
-      asdasdasdasd
+      Drum Machine
     </Section>
   );
 };
