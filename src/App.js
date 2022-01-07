@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import DrumMachine from "./components/DrumMachine/DrumMachine";
+import DrumMachine from "./components/DrumMachine";
 import Heading from "./components/Heading";
 
 const Main = styled.main`

@@ -6,18 +6,18 @@ import {primaryColor} from "../../utils/colors";
 
 
 const DisplayStyled = styled.div`
+  width: 200px;
+  height: 56px;
   font-family: 'Roboto',monospace;
   padding: 1rem;
-  border: 2px solid ${primaryColor};
-  border-bottom: 5px solid ${primaryColor};
-  border-left: 5px solid ${primaryColor};
+  border: 4px solid ${primaryColor};
+  text-transform: uppercase;
 `
 
 const Display = ({text}) => {
-  const newText = text.toUpperCase().split('').reverse().join('')
   return (
     <DisplayStyled>
-      {newText}
+      {text}
     </DisplayStyled>
   );
 };

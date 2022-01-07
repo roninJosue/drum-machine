@@ -9,6 +9,13 @@ import {
 } from "../../utils/colors";
 
 const StyledButton = styled.button`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
   border-radius: .5rem;
   background-color: ${white};
   padding: 2rem;
@@ -18,7 +25,12 @@ const StyledButton = styled.button`
   font-size: 1.2rem;
   font-weight: bolder;
   border-bottom: 4px solid ${borderColor};
+  //border-top: 4px solid transparent;
   transition: all .500ms ease;
+  margin: 0 .625rem .625rem 0;
+  &:nth-child(3n){
+    margin: 0;
+  }
 
   &:hover {
     background-color: ${primaryColor};
@@ -28,8 +40,9 @@ const StyledButton = styled.button`
   }
   
   &:active {
-    border-bottom: none;
-    border-top: 4px solid ${primaryColorHover};
+    top: 3px;
+    border-bottom: 1px solid transparent;
+    //border-top: 4px solid ${primaryColorHover};
   }
 `
 
