@@ -18,7 +18,7 @@ const DisplayStyled = styled.div`
 
 const Display = ({text}) => {
   return (
-    <DisplayStyled>
+    <DisplayStyled id='display'>
       {text}
     </DisplayStyled>
   );

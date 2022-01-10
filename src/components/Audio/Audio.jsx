@@ -2,7 +2,7 @@ import React from "react"
 
 const Audio = ({url, id}) => {
   return(
-    <audio src={url} id={id} />
+    <audio className='clip' src={url} id={id} />
   )
 }
 
