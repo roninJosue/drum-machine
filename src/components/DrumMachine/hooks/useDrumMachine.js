@@ -1,4 +1,4 @@
-import {useState} from "react"
+import {useCallback, useEffect, useState} from "react"
 
 const drumPadsArr = [
   {
@@ -59,9 +59,34 @@ const drumPadsArr = [
 
 const useDrumMachine = () => {
   const [drumPads, setDrumPads] = useState(drumPadsArr)
+  const [displayText, setDisplayText] = useState('');
+
+  const activePad = useCallback(
+    (id) => {
+      console.log(id)
+      const actualPad = drumPadsArr.filter(pad=> pad.keyCode === id)[0]
+      setDisplayText(actualPad.id)
+    },
+    [],
+  );
+
+  const handleKeyDown = useCallback(
+    ({keyCode}) => {
+      activePad(keyCode)
+    }, [activePad]
+  )
+
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyDown)
+
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [handleKeyDown])
 
   return {
-    drumPads
+    drumPads,
+    displayText,
+    activePad
   }
 }
 

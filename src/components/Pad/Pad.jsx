@@ -25,7 +25,6 @@ const StyledButton = styled.button`
   font-size: 1.2rem;
   font-weight: bolder;
   border-bottom: 4px solid ${borderColor};
-  //border-top: 4px solid transparent;
   transition: all .500ms ease;
   margin: 0 .625rem .625rem 0;
   &:nth-child(3n){
@@ -46,10 +45,10 @@ const StyledButton = styled.button`
   }
 `
 
-const Pad = ({text, onClick}) => {
+const Pad = ({text, onClick, id}) => {
   return (
     <StyledButton
-      onClick={onClick}
+      onClick={() => onClick(id)}
       className='drum-pad'
     >
       {text}
@@ -62,4 +61,4 @@ Pad.propTypes = {
   onClick: PropTypes.func.isRequired
 };
 
-export default Pad;
+export default React.memo(Pad);

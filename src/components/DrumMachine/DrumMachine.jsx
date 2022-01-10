@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
-import { primaryColor, white } from "../../utils/colors";
-import { breakpoints } from "../utils/styledBreakpoint";
+import {primaryColor, white} from "../../utils/colors";
+import {breakpoints} from "../utils/styledBreakpoint";
 import useDrumMachine from "./hooks/useDrumMachine";
 import Pad from "../Pad";
 import DrumPadContainer from "../DrumPadContainer/DrumPadContainer";
@@ -33,28 +33,31 @@ const Section = styled.section`
 `
 
 const DrumMachine = () => {
-  const {drumPads} = useDrumMachine()
+  const {
+    drumPads,
+    displayText,
+    activePad
+  } = useDrumMachine()
 
   return (
     <Section>
       <DrumPadContainer>
-        {drumPads.map(pad=>{
+        {drumPads.map(pad => {
           return (
             <Pad
               key={pad.keyCode}
-              onClick={() => {}}
+              onClick={activePad}
               text={pad.keyTrigger}
+              id={pad.keyCode}
             />
           )
         })}
       </DrumPadContainer>
-      <Display text='test' />
+      <Display text={displayText} />
     </Section>
   );
 };
 
-DrumMachine.propTypes = {
+DrumMachine.propTypes = {};
 
-};
-
-export default DrumMachine;
+export default React.memo(DrumMachine);
