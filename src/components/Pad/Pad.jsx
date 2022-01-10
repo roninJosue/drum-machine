@@ -1,12 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import {
   borderColor,
   primaryColor,
   primaryColorHover,
   white
 } from "../../utils/colors";
+
+const activePadCss = css`
+  background-color: ${primaryColor};
+  top: 3px;
+  border-color: ${primaryColorHover};
+  color: ${white} !important;
+  border-bottom: 1px solid transparent;
+`
 
 const StyledButton = styled.button`
   position: relative;
@@ -25,31 +33,22 @@ const StyledButton = styled.button`
   font-size: 1.2rem;
   font-weight: bolder;
   border-bottom: 4px solid ${borderColor};
-  transition: all .500ms ease;
+  transition: all .1s ease;
   margin: 0 .625rem .625rem 0;
-  &:nth-child(3n){
+
+  &:nth-child(3n) {
     margin: 0;
   }
 
-  &:hover {
-    background-color: ${primaryColor};
-    cursor: pointer;
-    color: ${white};
-    border-color: ${primaryColorHover};
-  }
-  
-  &:active {
-    top: 3px;
-    border-bottom: 1px solid transparent;
-    //border-top: 4px solid ${primaryColorHover};
-  }
+  ${props => props.active ? activePadCss : ''}
 `
 
-const Pad = ({text, onClick, id}) => {
+const Pad = ({text, onClick, id, active}) => {
   return (
     <StyledButton
       onClick={() => onClick(id)}
       className='drum-pad'
+      active={active}
     >
       {text}
     </StyledButton>

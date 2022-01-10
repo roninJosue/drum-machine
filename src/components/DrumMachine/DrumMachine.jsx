@@ -36,6 +36,7 @@ const DrumMachine = () => {
   const {
     drumPads,
     displayText,
+    handleClickPad,
     activePad
   } = useDrumMachine()
 
@@ -46,9 +47,10 @@ const DrumMachine = () => {
           return (
             <Pad
               key={pad.keyCode}
-              onClick={activePad}
+              onClick={handleClickPad}
               text={pad.keyTrigger}
               id={pad.keyCode}
+              active={pad.keyCode === activePad}
             />
           )
         })}

@@ -60,20 +60,25 @@ const drumPadsArr = [
 const useDrumMachine = () => {
   const [drumPads, setDrumPads] = useState(drumPadsArr)
   const [displayText, setDisplayText] = useState('');
+  const [activePad, setActivePad] = useState(null);
 
-  const activePad = useCallback(
+  const handleClickPad = useCallback(
     (id) => {
       console.log(id)
       const actualPad = drumPadsArr.filter(pad=> pad.keyCode === id)[0]
+      setActivePad(id)
       setDisplayText(actualPad.id)
+      setTimeout(() => {
+        setActivePad(null)
+      }, 100)
     },
     [],
   );
 
   const handleKeyDown = useCallback(
     ({keyCode}) => {
-      activePad(keyCode)
-    }, [activePad]
+      handleClickPad(keyCode)
+    }, [handleClickPad]
   )
 
 
@@ -86,6 +91,7 @@ const useDrumMachine = () => {
   return {
     drumPads,
     displayText,
+    handleClickPad,
     activePad
   }
 }

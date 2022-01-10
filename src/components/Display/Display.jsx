@@ -10,7 +10,7 @@ const DisplayStyled = styled.div`
   height: 56px;
   font-family: 'Roboto',monospace;
   padding: 1rem;
-  border: 4px solid ${primaryColor};
+  border: 1px solid ${primaryColor};
   text-transform: uppercase;
 `
 
