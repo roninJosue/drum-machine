@@ -41,7 +41,7 @@ const DrumMachine = () => {
   } = useDrumMachine()
 
   return (
-    <Section>
+    <Section id='drum-machine'>
       <DrumPadContainer>
         {drumPads.map(pad => {
           return (
@@ -50,7 +50,9 @@ const DrumMachine = () => {
               onClick={handleClickPad}
               text={pad.keyTrigger}
               id={pad.keyCode}
+              audio={pad.id}
               active={pad.keyCode === activePad}
+              url={pad.url}
             />
           )
         })}

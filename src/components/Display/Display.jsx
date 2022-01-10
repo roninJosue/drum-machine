@@ -11,7 +11,9 @@ const DisplayStyled = styled.div`
   font-family: 'Roboto',monospace;
   padding: 1rem;
   border: 1px solid ${primaryColor};
-  text-transform: uppercase;
+  //text-transform: uppercase;
+  display: flex;
+  align-items: center;
 `
 
 const Display = ({text}) => {

@@ -7,6 +7,7 @@ import {
   primaryColorHover,
   white
 } from "../../utils/colors";
+import Audio from "../Audio";
 
 const activePadCss = css`
   background-color: ${primaryColor};
@@ -16,7 +17,7 @@ const activePadCss = css`
   border-bottom: 1px solid transparent;
 `
 
-const StyledButton = styled.button`
+const StyledButton = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -43,14 +44,17 @@ const StyledButton = styled.button`
   ${props => props.active ? activePadCss : ''}
 `
 
-const Pad = ({text, onClick, id, active}) => {
+const Pad = ({text, onClick, id, active, url, audio}) => {
   return (
     <StyledButton
+      role='button'
       onClick={() => onClick(id)}
       className='drum-pad'
       active={active}
+      id={audio}
     >
       {text}
+      <Audio url={url} id={text}/>
     </StyledButton>
   );
 };

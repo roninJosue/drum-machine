@@ -64,16 +64,21 @@ const useDrumMachine = () => {
 
   const handleClickPad = useCallback(
     (id) => {
-      console.log(id)
       const actualPad = drumPadsArr.filter(pad=> pad.keyCode === id)[0]
       setActivePad(id)
       setDisplayText(actualPad.id)
+      playSound(actualPad.keyTrigger)
       setTimeout(() => {
         setActivePad(null)
       }, 100)
     },
     [],
   );
+
+  const playSound = (key) => {
+    const audio = document.getElementById(key)
+    audio.play()
+  }
 
   const handleKeyDown = useCallback(
     ({keyCode}) => {
